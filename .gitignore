@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+
+# regenerated intermediates (rebuild with code/prep_data.py and the fit jobs)
+code/prepped/
+code/logs/
+
+# raw source downloads (see DATA_SOURCES.md)
+data/events/_raw_eia930/
+data/events/weather/_chunks/
+
+# the assembled 2014 modelling table is built locally, not redistributed
+data/era2014/*.csv
+
+.DS_Store

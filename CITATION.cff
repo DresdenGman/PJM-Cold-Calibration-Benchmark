@@ -1,0 +1,28 @@
+cff-version: 1.2.0
+message: "If you use this benchmark, please cite it as below."
+type: software
+title: "PJM Cold-Spell Calibration Benchmark: When Cold-Spell Calibration Fails to Transfer"
+version: 1.0.0
+date-released: 2026-11-06
+authors:
+  - family-names: Goehner
+    given-names: Dresden
+    email: dresdengoehner@outlook.com
+    affiliation: "Independent Researcher, Jurupa Valley, CA, USA"
+license: MIT
+repository-code: "https://github.com/DresdenGman/PJM-Cold-Calibration-Benchmark"
+abstract: >-
+  Code, pre-registration, derived data and full results for a benchmark of
+  probabilistic load forecasting across four PJM extreme-cold events
+  (2014 polar vortex, 2015 anchor, 2017-18 cold snap, 2022 Winter Storm
+  Elliott). Three forecaster families are combined with five conformal
+  calibrators at day-ahead and one-hour horizons and judged under strictly
+  chronological evaluation against retrospective leave-one-event-out
+  transfer, under a protocol frozen before any result was computed.
+keywords:
+  - probabilistic load forecasting
+  - conformal prediction
+  - calibration transfer
+  - extreme cold events
+  - PJM
+  - forecast evaluation
