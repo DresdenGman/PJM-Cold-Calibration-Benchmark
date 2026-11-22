@@ -3,3 +3,7 @@ pandas>=2.1
 scipy>=1.11
 scikit-learn>=1.5
 lightgbm>=4.0
+matplotlib>=3.7   # figures/make_fig_headline.py only
+# Reference run (v1.0.0): scikit-learn 1.5.0, pandas 2.1.4, numpy 1.26.2.
+# v1.1.0 additions were run with scikit-learn 1.8.0, pandas 3.0.1, numpy 2.4.3, LightGBM 4.7.0;
+# re-running the PJM 2022 day-ahead L1 and L2 cells in that environment reproduces v1.0.0 exactly.

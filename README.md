@@ -1,58 +1,49 @@
-# PJM Cold-Spell Calibration Benchmark
+# PJM and MISO Cold-Spell Calibration Benchmark
 
-**When Cold-Spell Calibration Fails to Transfer: A PJM Benchmark of Probabilistic Load Forecasting Across Four Extreme-Cold Events**
+**When Cold-Spell Calibration Fails to Transfer: A PJM and MISO Benchmark of Probabilistic Load Forecasting in Extreme Cold**
 
-This repository contains the code, pre-registration, derived data and full
-results for a benchmark study of probabilistic load forecasting under
-extreme cold. It asks a narrow question: can calibration learned from
-historically available cold-weather observations be transferred to a
-subsequent extreme-cold event, under evaluation rules that respect what
-was knowable at the time?
+This repository contains the code, frozen protocol, derived data and full results for a benchmark
+of probabilistic load forecasting under extreme cold. It asks a narrow question: can calibration
+learned from cold weather observed *before* an extreme-cold event be transferred to that event,
+under evaluation rules that respect what was knowable at the time?
 
-The benchmark covers four PJM extreme-cold events — the January 2014
-polar vortex, February 2015 (an official-forecast error anchor only), the
-December 2017 – January 2018 cold snap, and Winter Storm Elliott in
-December 2022. Three structurally different forecasters (a quantile
-gradient-boosting model, an extrapolating linear-tree LightGBM, and a
-statistical location–scale model) are combined with five conformal-style
-calibrators (global split conformal, temperature-stratified Mondrian in
-guarantee-preserving and shrinkage variants, adaptive conformal inference,
-and a temperature-excess scaled variant, plus uncalibrated and
-proportionally expanded baselines), at a day-ahead issuance horizon
-(primary) and a one-hour oracle horizon (reference). Every method is
-judged twice: under strictly chronological evaluation, and under
-retrospective leave-one-event-out (LOEO) transfer.
+The primary benchmark covers four PJM extreme-cold events — the January 2014 polar vortex,
+February 2015 (an official-forecast error anchor only), the December 2017 – January 2018 cold snap
+and Winter Storm Elliott (December 2022). Three forecasters (quantile gradient boosting,
+linear-leaf LightGBM, a statistical location–scale model) are combined with five conformal-style
+calibrators plus uncalibrated and proportionally expanded baselines, at a day-ahead horizon
+(primary) and a one-hour oracle horizon, and judged twice: under strictly chronological evaluation
+and under retrospective leave-one-event-out (LOEO) transfer. Version 1.1.0 adds a pre-specified
+replication on MISO, a forecast-temperature sensitivity arm and the prior-winter calibration
+sensitivity.
 
-The design — event definitions, data splits, calibrator formulas and the
-three judgements below — was frozen in writing before any result was
-computed (see `preregistration/`).
+The design, event definitions, data splits, calibrator formulas and judgements were frozen in
+writing before the primary results were computed (`preregistration/`). These files have no external
+timestamp, so we describe the protocol as pre-specified rather than registered.
+
+![Headline figure](figures/fig_headline.png)
 
 ## Headline findings
 
-- **J1 — collapse.** Uncalibrated 90% prediction intervals collapse
-  inside the events: at the day-ahead horizon the quantile-boosting model
-  covered 12.5% of polar-vortex hours against 65.7% over the full 2014
-  evaluation period (gap +53.2 pp), with gaps of +14.3 pp (2018 snap) and
-  +9.2 pp (Elliott). The strictest pre-registered form of J1 (a gap of
-  ≥10 pp in all three modelled events) narrowly missed on Elliott; the
-  collapse itself replicates in the extrapolating learner (+59.0 /
-  +15.8 / +31.6 pp), so it is not one model's artifact.
-- **J2 — repair fails.** No calibrator, selected using only the other
-  events, restored event-window 90% coverage to within ±5 pp of nominal
-  in at least two of the three events while respecting the width and
-  placebo conditions: 0 of 18 horizon × learner cells passed. The
-  strongest single repair (adaptive conformal on the 2014 vortex) reached
-  0.583 — still far from 0.90.
-- **J3 — transfer illusion.** Retrospective LOEO evaluation flatters the
-  temperature-stratified Mondrian calibrators: relative to chronological
-  evaluation it overstates their mean event coverage by +11.6 pp (C2a)
-  and +21.2 pp (C2b) on the day-ahead quantile-boosting arm — exactly the
-  pre-registered "transfer illusion" configuration — while global and
-  scaled conformal show gaps near zero.
-- **The operator's own record.** PJM's day-ahead forecasts underestimated
-  the peak of all four events: −2,545 MW (−1.8%) in January 2014,
-  −1,909 MW (−1.3%) in February 2015, −5,361 MW (−3.9%) in the 2017–18
-  snap, and −8,878 MW (−6.6%) during Elliott.
+- **Collapse.** Uncalibrated 90% intervals cover far fewer hours inside the events than over the
+  full evaluation periods. Day-ahead quantile boosting: PJM 0.125 / 0.439 / 0.458 against
+  0.657 / 0.583 / 0.550; MISO 0.140 / 0.222 / 0.281 against 0.499 / 0.546 / 0.544. Event coverage is
+  below full-period coverage in all six events. In PJM the strictest form of the criterion
+  (≥10 pp in all three events) narrowly missed on Elliott (+9.2 pp); in MISO it holds in all three.
+- **Repair fails.** No calibrator selected without the target event passes the repair test
+  (coverage within ±5 pp of nominal plus frontier, width and placebo conditions): 0 of 6
+  learner × horizon cells in PJM and 0 of 6 in MISO.
+- **Retrospective and chronological evaluation disagree.** In PJM, LOEO evaluation overstates the
+  temperature-stratified Mondrian calibrators' mean event coverage by +11.6 and +21.2 pp
+  (day-ahead, quantile boosting). In MISO the gaps are as large per event but change sign
+  (means −4.0 and −5.3 pp), so the *direction* of the PJM bias does not replicate; the instability
+  of LOEO numbers does.
+- **Forecast temperature.** Replacing ERA5 temperature by archived GFS day-ahead forecasts for
+  Elliott leaves uncalibrated event coverage unchanged in both systems (PJM 0.458, MISO 0.281).
+- **The operator's own record.** PJM's day-ahead forecasts underestimated the peak of all four
+  PJM events: −2,545 MW (−1.8%) in January 2014, −1,909 MW (−1.3%) in February 2015,
+  −5,361 MW (−3.9%) in the 2017–18 snap and −8,878 MW (−6.6%) during Elliott. The EIA-930
+  forecast for MISO missed by −3.8%, +4.6% (2019, a day with load management) and −2.8%.
 
 ## Repository layout
 
@@ -63,6 +54,10 @@ computed (see `preregistration/`).
 | `data/events/` | Derived hourly PJM load series (from EIA-930) and ERA5 footprint-mean weather series (from the Open-Meteo archive) for the 2018/2022 eras. |
 | `data/regen/` | Regenerated 2014 QR-GBT quantile forecasts for the full test year 2014, with their metric set. |
 | `data/era2014/` | Placeholder and instructions for the assembled 2014 modelling table, which is not redistributed (see `DATA_SOURCES.md`). |
+| `replication_miso/` | Amendment A4: pre-specified MISO replication — plan with SHA-256, code, derived data, results and verdict. |
+| `sensitivity_forecast_temperature/` | Amendment A3 (post hoc): GFS forecast temperature for the 2022 era of PJM and MISO. |
+| `code/job_mw.py`, `code/results/frag_mw_*` | Amendment A2: prior-winter calibration history sensitivity. |
+| `figures/` | Headline figure and the script that draws it from the results matrices. |
 | `DATA_SOURCES.md` | Provenance of every dataset and how to rebuild each one from the public sources. |
 
 ## Reproducing the results
@@ -106,7 +101,7 @@ demand vs PJM metered load), are in `DATA_SOURCES.md`.
 ## Citation
 
 If you use this benchmark, please cite the software using `CITATION.cff`
-in this repository. Archived releases are deposited on Zenodo.
+in this repository. Archived releases are deposited on Zenodo (concept DOI 10.5281/zenodo.24010849).
 
 ## License
 
