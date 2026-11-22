@@ -86,3 +86,23 @@ max_iter=300, max_depth=6, seed 42), together with the full metric set.
 See `data/regen/README.md` for the specification and the modelling
 choices that had to be fixed by decision because the original run did
 not document them.
+
+## 6. MISO replication (v1.1.0, `replication_miso/`)
+
+- **Load**: EIA-930 six-month BALANCE files, rows with balancing authority `MISO`, column
+  "Demand (MW)" (and "Demand Forecast (MW)" for the operator anchor), same window conventions as §1.
+  Glitch rule: |value| > 150,000 MW → NaN (none occurred). Files used: 2016 Jan–Jun … 2019 Jan–Jun
+  and 2020 Jan–Jun … 2023 Jan–Jun, excluding 2022 Jan–Jun to mirror the PJM 2022 era.
+- **Weather**: ERA5 via the Open-Meteo archive, same variables as §2, equal-weight mean of a
+  15-point grid over MISO's northern footprint: latitudes 38.5, 41.5, 44.5 °N × longitudes
+  −95.5, −93.0, −90.5, −88.0, −85.5 °E. MISO South is not covered.
+- **Event context**: the January 2019 MISO peak was reduced by load-modifying resources and load
+  management (U.S. EIA, *Today in Energy*, 26 Feb 2019,
+  https://www.eia.gov/todayinenergy/detail.php?id=38472).
+
+## 7. Forecast temperature (v1.1.0, `sensitivity_forecast_temperature/`)
+
+- Open-Meteo previous-runs archive (https://previous-runs-api.open-meteo.com), variables
+  `temperature_2m_previous_day1` and `temperature_2m_previous_day2`, model `gfs_seamless`, UTC,
+  at the PJM and MISO footprint points, equal-weight mean. Open-Meteo data are CC BY 4.0.
+  Wind forecasts are not available in this archive for the period used.
