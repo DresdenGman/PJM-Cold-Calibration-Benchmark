@@ -10,6 +10,7 @@
 | A6 | Pre-specified extension | Seven additional cold events (PJM 2019; PJM and MISO 2024–2026), windows by weather rule, criteria N1–N3 (`extended_events_a6/PLAN_A6.md`) | plan published 2026-11-22 (8719926), populations before fitting (afc3b62); N1–N2 pass (`RESULTS_A6.md`) |
 | A7 | Pre-specified test | Weighted conformal (C6) and conditional GPD tails (C7) (`remedies_a7/PLAN_A7.md`) | plan published 2026-11-22 (8719926); neither supported (`RESULTS_A7.md`) |
 | A8 | Pre-specified test | Benchmark refitted on day-ahead forecast weather (GEFS reforecast and operational), criteria F1–F3 (`forecast_weather_a8/PLAN_A8.md`) | plan published 2026-11-22 (8719926); F1–F2 pass, F3 fails (`RESULTS_A8.md`) |
+| A9 | Pre-specified redesign | Long histories, leave-one-winter-out calibration on prior winters, GEFS weather primary, baseline-relative repair test, null windows, 13-event retrospective contrast; criteria G1–G4 (`redesign_a9/PLAN_A9.md`) | plan published 2026-11-22, after the results of A1–A8 were known |
 
 None of the protocol files, nor the A4 plan, carries an external timestamp. The A4 plan was
 fingerprinted (SHA-256, local time) before any MISO data were downloaded, and the MISO population
