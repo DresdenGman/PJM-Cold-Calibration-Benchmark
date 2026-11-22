@@ -2,7 +2,7 @@ cff-version: 1.2.0
 message: "If you use this benchmark, please cite it as below."
 type: software
 title: "PJM and MISO Cold-Spell Calibration Benchmark: When Cold-Spell Calibration Fails to Transfer"
-version: 1.1.0
+version: 1.2.0
 date-released: 2026-11-22
 authors:
   - family-names: Goehner
@@ -13,14 +13,14 @@ license: MIT
 repository-code: "https://github.com/DresdenGman/PJM-Cold-Calibration-Benchmark"
 abstract: >-
   Code, frozen protocol, derived data and full results for a benchmark of
-  probabilistic load forecasting in extreme cold: four PJM events (2014 polar
-  vortex, 2015 anchor, 2017-18 cold snap, 2022 Winter Storm Elliott) and a
-  pre-specified replication on MISO (2017-18, 2019, 2022). Three forecasters
-  and five conformal calibrators are evaluated at day-ahead and one-hour
-  horizons under strictly chronological evaluation and under retrospective
-  leave-one-event-out transfer. Version 1.1.0 adds the MISO replication, a
-  forecast-temperature sensitivity arm and the prior-winter calibration
-  sensitivity.
+  probabilistic load forecasting in extreme cold: 13 modelled events in PJM
+  and MISO from 2014 to 2026, plus a 2015 operator-error anchor. Three
+  forecasters and eight recalibration methods are evaluated under strictly
+  chronological evaluation and under retrospective leave-one-event-out
+  transfer. Version 1.2.0 adds amendments A5-A8 (ensemble-spread calibrator,
+  seven further events, temperature-weighted conformal and extreme-value
+  tails, and the benchmark refitted on day-ahead GEFS forecasts), whose plans
+  were published here before their data or analyses, and all figure scripts.
 keywords:
   - probabilistic load forecasting
   - conformal prediction
