@@ -1,0 +1,4 @@
+[2019] thr=-10.147 C; spells=2; coldest eval hour 2019-01-31 07:00:00 (-22.18 C) -> event {'name': 'event_2019_a6', 'start': '2019-01-29 00:00', 'end': '2019-02-02 00:00'} (spell 2019_S2, 64 h)
+[2024] thr=-8.520 C; spells=1; coldest eval hour 2024-01-15 07:00:00 (-14.85 C) -> event {'name': 'event_2024_a6', 'start': '2024-01-14 00:00', 'end': '2024-01-18 00:00'} (spell 2024_S1, 80 h)
+[2025] thr=-4.893 C; spells=3; coldest eval hour 2025-01-22 04:00:00 (-18.84 C) -> event {'name': 'event_2025_a6', 'start': '2025-01-19 00:00', 'end': '2025-01-26 00:00'} (spell 2025_S2, 150 h)
+[2026] thr=-8.320 C; spells=3; coldest eval hour 2026-01-24 05:00:00 (-19.08 C) -> event {'name': 'event_2026_a6', 'start': '2026-01-23 00:00', 'end': '2026-02-01 00:00'} (spell 2026_S2, 203 h)
