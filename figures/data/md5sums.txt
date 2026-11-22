@@ -1,0 +1,9 @@
+9dedebd35e6d081a4e37a3cb3286e625  fig0_schematic_scalars.csv
+f0925cb1331c85cdf86fc08236321bf7  fig1_collapse_series.csv
+071b65e3d42372dab9fc76dfde5b89d2  fig2_transfer_series.csv
+9f4299024e8d5d01f01c2e768c195d84  fig3_frontier_series.csv
+0d7840c35d204f78c13fc6d398c99024  fig4_pooled_check.csv
+10c814f6bb7d9e79e81f21df8b4c9a77  fig4_reliability_series.csv
+cf181132a0f7d0baf4ffd198d5bc31e8  fig5_operator_series.csv
+a9225951538f38a8769fe3781086afd7  fig6_event_series.csv
+54642a9253a8060106e1c7420a71822d  fig7_oracle_series.csv
