@@ -1,0 +1,16 @@
+{
+ "system": "PJM",
+ "era": "2024",
+ "learner": "L2",
+ "z_missing_eval": 0,
+ "n_eval": 2180,
+ "z_missing_tune": 0,
+ "z_missing_cal": 0,
+ "members": [
+  31
+ ],
+ "log": [
+  "C4 sigma0=8244.7 MW; gammas={0.2: (0.0, 0.4), 0.1: (0.0, 0.4), 0.05: (0.0, 0.4), 0.02: (0.0, 0.4)}",
+  "C5 sigma0=8244.7; tune rows with z=6552/6552; gammas={0.2: (0.0, 4.0), 0.1: (0.0, 4.0), 0.05: (0.0, 0.0), 0.02: (0.0, 0.0)}"
+ ]
+}
