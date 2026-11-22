@@ -1,0 +1,16 @@
+{
+ "system": "MISO",
+ "era": "2018",
+ "learner": "L2",
+ "z_missing_eval": 0,
+ "n_eval": 2156,
+ "z_missing_tune": 769,
+ "z_missing_cal": 0,
+ "members": [
+  21
+ ],
+ "log": [
+  "C4 sigma0=7030.4 MW; gammas={0.2: (0.0, 0.0), 0.1: (0.0, 0.0), 0.05: (0.0, 0.0), 0.02: (0.0, 0.0)}",
+  "C5 sigma0=7030.4; tune rows with z=5771/6531; gammas={0.2: (0.0, 4.0), 0.1: (0.0, 0.0), 0.05: (0.0, 0.0), 0.02: (0.0, 0.0)}"
+ ]
+}
