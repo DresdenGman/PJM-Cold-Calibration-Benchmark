@@ -1,0 +1,16 @@
+{
+ "system": "pjm",
+ "era": "2022",
+ "rows": 27720,
+ "t_missing": 5,
+ "w_missing": 5,
+ "t_missing_by_part": {
+  "fit": 0,
+  "tune": 0,
+  "cal": 0,
+  "eval": 0
+ },
+ "bias_vs_era5": -1.103756141279291,
+ "mae_vs_era5": 1.3200399282378172,
+ "corr": 0.9926270153402538
+}

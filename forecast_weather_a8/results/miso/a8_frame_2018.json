@@ -1,0 +1,16 @@
+{
+ "system": "miso",
+ "era": "2018",
+ "rows": 18960,
+ "t_missing": 5,
+ "w_missing": 5,
+ "t_missing_by_part": {
+  "fit": 0,
+  "tune": 0,
+  "cal": 0,
+  "eval": 0
+ },
+ "bias_vs_era5": -1.075984152524986,
+ "mae_vs_era5": 1.4203497494064892,
+ "corr": 0.99292741148478
+}

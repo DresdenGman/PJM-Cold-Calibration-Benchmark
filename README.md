@@ -58,6 +58,9 @@ timestamp, so we describe the protocol as pre-specified rather than registered.
 | `sensitivity_forecast_temperature/` | Amendment A3 (post hoc): GFS forecast temperature for the 2022 era of PJM and MISO. |
 | `code/job_mw.py`, `code/results/frag_mw_*` | Amendment A2: prior-winter calibration history sensitivity. |
 | `ensemble_spread_c5/` | Amendment A5: pre-specified test of an ensemble-spread calibrator (C5) on archived GEFS; plan published before any data were downloaded, code, extracted GEFS temperatures and results (all criteria fail). |
+| `extended_events_a6/` | Amendment A6: seven further cold events (PJM 2019; PJM and MISO 2024–2026), windows by weather rule. |
+| `remedies_a7/` | Amendment A7: temperature-weighted conformal (C6) and conditional GPD tails (C7). |
+| `forecast_weather_a8/` | Amendment A8: the benchmark refitted on archived day-ahead GEFS forecasts; extracted forecast data. |
 | `figures/` | Every manuscript and supplement figure, with the scripts and plotted data that draw them (see `figures/README.md`). |
 | `DATA_SOURCES.md` | Provenance of every dataset and how to rebuild each one from the public sources. |
 

@@ -1,0 +1,19 @@
+system  era  event_fc  period_fc  gap_fc  event_re  period_re  c3_fc chat  chat_cov  winfl  plac   rep    c5  c5_winfl  c5_plac  c5_ac  c5_d
+   PJM 2014     0.125      0.661  53.584     0.125      0.657  0.583   C3     0.583  1.108 1.000 False 0.194     0.623    0.935  False  True
+   PJM 2018     0.386      0.527  14.100     0.439      0.583  0.765   C3     0.765  1.130 0.899 False 0.712     0.614    0.870  False  True
+   PJM 2019     0.562      0.532  -3.003     0.531      0.558  0.802   C3     0.802  1.422 0.899 False 0.729     0.613    0.899  False  True
+   PJM 2022     0.521      0.506  -1.480     0.458      0.550  0.635   C3     0.635    inf 0.880 False 0.646     0.630    0.797  False  True
+   PJM 2024     0.510      0.500  -0.996     0.438      0.551  0.833   C3     0.833  1.239 0.889 False 0.875     0.559    0.903  False  True
+   PJM 2025     0.256      0.527  27.141     0.208      0.548  0.679   C3     0.679  1.535 0.899 False 0.464     0.428    0.754  False  True
+   PJM 2026     0.125      0.475  35.042     0.236      0.498  0.741   C3     0.741  1.833 0.934 False 0.505     0.515    0.836  False  True
+  MISO 2018     0.114      0.503  38.961     0.140      0.499  0.727   C3     0.727  1.740 0.913 False 0.523     0.656    0.889  False  True
+  MISO 2019     0.139      0.564  42.465     0.222      0.546  0.667   C3     0.667  1.792 0.986 False 0.653     0.943    0.963  False False
+  MISO 2022     0.312      0.562  24.987     0.281      0.544  0.750   C3     0.750    inf 0.948 False 0.438     0.725    0.948  False  True
+  MISO 2024     0.158      0.595  43.708     0.175      0.631  0.633   C3     0.633  1.100 0.900 False 0.417     0.483    0.844  False  True
+  MISO 2025     0.142      0.487  34.581     0.108      0.518  0.533   C3     0.533  1.583 0.931 False 0.292     0.470    0.736  False  True
+  MISO 2026     0.730      0.588 -14.190     0.571      0.599  0.937   C3     0.937  1.348 0.736 False 0.937     0.453    0.731  False  True
+
+F1: below in 9/13 (need >= 9) -> PASS
+F2: repaired (a)&(c)&(d) in 0/13 (pass if <= 4) -> PASS
+F3: C5 (a)&(c) in 0/13 (need >= 7), (d) all=False -> NOT SUPPORTED
+event cov90 forecast minus reanalysis: mean +1.1 pp, range -11.1 to +15.9

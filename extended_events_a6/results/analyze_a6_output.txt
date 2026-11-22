@@ -1,0 +1,18 @@
+system  era   new              event   n  event_cov90  period_cov90  gap_pp  event_cov98    c3 chat  chat_cov90  width_infl  placebo     a     c     d
+   PJM 2014 False  event_2014_vortex  72        0.125         0.657  53.231        0.194 0.583   C3       0.583       1.122    0.995 False False False
+   PJM 2018 False    event_2018_snap 264        0.439         0.583  14.317        0.712 0.701   C3       0.701       1.039    0.919 False False  True
+   PJM 2019  True      event_2019_a6  96        0.531         0.558   2.719        0.729 0.771   C3       0.771       1.302    0.906 False False  True
+   PJM 2022 False event_2022_elliott  96        0.458         0.550   9.197        0.615 0.615   C3       0.615         inf    0.943 False False  True
+   PJM 2024  True      event_2024_a6  96        0.438         0.551  11.342        0.542 0.688   C3       0.688       1.162    0.924 False False  True
+   PJM 2025  True      event_2025_a6 168        0.208         0.548  33.990        0.405 0.786   C3       0.786       1.510    0.871 False False  True
+   PJM 2026  True      event_2026_a6 216        0.236         0.498  26.157        0.722 0.806   C3       0.806       1.766    0.917 False False  True
+  MISO 2018 False    event_2018_snap 264        0.140         0.499  35.846        0.424 0.735  C0x       0.542       1.200    0.927 False False  True
+  MISO 2019 False  event_2019_vortex  72        0.222         0.546  32.416        0.347 0.750  C0x       0.583       1.450    0.926 False False  True
+  MISO 2022 False event_2022_elliott  96        0.281         0.544  26.302        0.417 0.740   C3       0.740         inf    0.927 False False  True
+  MISO 2024  True      event_2024_a6 120        0.175         0.631  45.619        0.425 0.558  C0x       0.725       0.950    0.922 False False  True
+  MISO 2025  True      event_2025_a6 120        0.108         0.518  40.929        0.242 0.567   C4       0.342       1.956    0.786 False False  True
+  MISO 2026  True      event_2026_a6  63        0.571         0.599   2.755        0.810 0.984  C0x       0.952       0.950    0.782 False False  True
+
+N1: below in 7/7 (need >=5), >=10pp in 5/7 (need >=4) -> PASS
+N2: repair (a)&(c)&(d) with out-of-event selection in 0/7 new events (pass if <=2) -> PASS
+N3: all events below in 13/13; distinct weather events below in all systems 7/7; one-sided sign test p = 0.0078

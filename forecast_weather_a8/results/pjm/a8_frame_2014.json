@@ -1,0 +1,16 @@
+{
+ "system": "pjm",
+ "era": "2014",
+ "rows": 43824,
+ "t_missing": 0,
+ "w_missing": 0,
+ "t_missing_by_part": {
+  "fit": 0,
+  "tune": 0,
+  "cal": 0,
+  "eval": 0
+ },
+ "bias_vs_era5": -1.219561881870918,
+ "mae_vs_era5": 1.832206835422498,
+ "corr": 0.98732972072234
+}

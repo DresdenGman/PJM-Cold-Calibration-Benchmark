@@ -6,7 +6,7 @@ and writes PDF and PNG next to itself.
 
 | File | Figure | Script |
 |---|---|---|
-| `fig_headline` | Main text, coverage in six events (PJM and MISO) | `make_fig_headline.py ../code/results/results_matrix.csv ../replication_miso/results/results_matrix.csv fig_headline` |
+| `fig_headline` | Main text, coverage in 13 events (PJM and MISO) | `make_fig_headline.py ../code/results/results_matrix.csv ../replication_miso/results/results_matrix.csv ../extended_events_a6/results/pjm/results_matrix_a6.csv ../extended_events_a6/results/miso/results_matrix_a6.csv fig_headline` |
 | `fig0_design_schematic` | Main text, evaluation design | `make_fig_design.py fig0_design_schematic` |
 | `fig6_event_series` | Main text, the 2014 vortex hour by hour | `build_figs_v3.py` |
 | `fig3_frontier` | Main text, exceedance–headroom frontier | `build_figs_v3.py` |
