@@ -57,7 +57,7 @@ timestamp, so we describe the protocol as pre-specified rather than registered.
 | `replication_miso/` | Amendment A4: pre-specified MISO replication — plan with SHA-256, code, derived data, results and verdict. |
 | `sensitivity_forecast_temperature/` | Amendment A3 (post hoc): GFS forecast temperature for the 2022 era of PJM and MISO. |
 | `code/job_mw.py`, `code/results/frag_mw_*` | Amendment A2: prior-winter calibration history sensitivity. |
-| `figures/` | Headline figure and the script that draws it from the results matrices. |
+| `figures/` | Every manuscript and supplement figure, with the scripts and plotted data that draw them (see `figures/README.md`). |
 | `DATA_SOURCES.md` | Provenance of every dataset and how to rebuild each one from the public sources. |
 
 ## Reproducing the results

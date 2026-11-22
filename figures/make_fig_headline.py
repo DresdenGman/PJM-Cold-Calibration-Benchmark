@@ -5,6 +5,7 @@ tidy results matrices; nothing typed by hand."""
 import sys, pandas as pd, numpy as np, matplotlib
 matplotlib.use("Agg")
 import matplotlib.pyplot as plt
+import sys as _s, os as _o; _s.path.insert(0, _o.path.dirname(_o.path.abspath(__file__))); import _fonts  # noqa: E402,F401  (Liberation Serif if available)
 pjm = pd.read_csv(sys.argv[1]); miso = pd.read_csv(sys.argv[2]); out = sys.argv[3]
 def g(df, era, cal, scope):
     r = df[(df.era == int(era)) & (df.horizon == "HDA") & (df.learner == "L1") &
@@ -17,10 +18,12 @@ rows = [("PJM", "2014", "event_2014_vortex", "2014 polar vortex (72 h)"),
         ("MISO", "2018", "event_2018_snap", "2017–18 cold snap (264 h)"),
         ("MISO", "2019", "event_2019_vortex", "2019 polar vortex (72 h)"),
         ("MISO", "2022", "event_2022_elliott", "2022 Winter Storm Elliott (96 h)")]
-plt.rcParams.update({"font.family": "serif", "font.serif": ["Times New Roman", "Times", "STIXGeneral", "DejaVu Serif"],
-                     "font.size": 9, "axes.linewidth": 0.8})
+plt.rcParams.update({"font.family": "serif", "font.serif": ["Liberation Serif"], "mathtext.fontset": "custom",
+                     "mathtext.rm": "Liberation Serif", "mathtext.it": "Liberation Serif:italic", "mathtext.bf": "Liberation Serif:bold",
+                     "axes.edgecolor": "#1A1A1A", "axes.linewidth": 0.8, "text.color": "#1A1A1A",
+                     "xtick.labelsize": 8, "ytick.labelsize": 8, "axes.labelsize": 9.5, "legend.fontsize": 8})
 fig, ax = plt.subplots(figsize=(7.2, 3.9))
-VER, SKY, GRY = "#D55E00", "#56B4E9", "#BBBBBB"
+VER, SKY, GRY = "#D55E00", "#56B4E9", "#BDBDBD"
 ys = [6.4, 5.4, 4.4, 2.6, 1.6, 0.6]
 tab = []
 for (sysn, era, scope, label), y in zip(rows, ys):
@@ -42,7 +45,7 @@ for yb, name in [(5.4, "PJM"), (1.6, "MISO")]:
             transform=ax.get_yaxis_transform())
 ax.axhline(3.5, color="#999999", lw=0.6)
 ax.set_xlim(0, 1.0); ax.set_ylim(0, 7.4); ax.set_yticks([])
-ax.set_xticks([0, 0.25, 0.5, 0.75, 0.9, 1.0]); ax.grid(axis="x", color="#eeeeee", lw=0.6); ax.set_axisbelow(True)
+ax.set_xticks([0, 0.25, 0.5, 0.75, 0.9, 1.0]); ax.grid(axis="x", color="#D9D9D9", lw=0.55); ax.set_axisbelow(True)
 ax.set_xlabel("Coverage of nominal 90% interval (quantile gradient boosting, day-ahead arm)")
 h = [plt.Line2D([], [], ls="", marker="o", color=VER, markeredgecolor="#5a2300", label="Event window, uncalibrated"),
      plt.Line2D([], [], ls="", marker="o", color=SKY, markeredgecolor="#1f3a4d", label="Full evaluation period, uncalibrated"),
