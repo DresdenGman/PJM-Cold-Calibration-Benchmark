@@ -11,6 +11,8 @@
 | A7 | Pre-specified test | Weighted conformal (C6) and conditional GPD tails (C7) (`remedies_a7/PLAN_A7.md`) | plan published 2026-11-22 (8719926); neither supported (`RESULTS_A7.md`) |
 | A8 | Pre-specified test | Benchmark refitted on day-ahead forecast weather (GEFS reforecast and operational), criteria F1–F3 (`forecast_weather_a8/PLAN_A8.md`) | plan published 2026-11-22 (8719926); F1–F2 pass, F3 fails (`RESULTS_A8.md`) |
 | A9 | Pre-specified redesign | Long histories, leave-one-winter-out calibration on prior winters, GEFS weather primary, baseline-relative repair test, null windows, 13-event retrospective contrast; criteria G1–G4 (`redesign_a9/PLAN_A9.md`) | plan published 2026-11-22, after the results of A1–A8 were known |
+| A10 | Exploratory, pre-specified | Rapid-onset Mondrian (C8a/C8b) and a holiday-aware forecaster (L1h), criteria H1–H2 (`rapid_onset_a10/PLAN_A10.md`) | plan published 2026-11-22 after A9 results |
+| A11 | Pre-specified extension | ERCOT, SPP, NYISO and ISO-NE under the A9 design, load-shed handling, criteria K1–K3 (`more_grids_a11/PLAN_A11.md`) | plan published 2026-11-22 before any of its data |
 
 None of the protocol files, nor the A4 plan, carries an external timestamp. The A4 plan was
 fingerprinted (SHA-256, local time) before any MISO data were downloaded, and the MISO population
