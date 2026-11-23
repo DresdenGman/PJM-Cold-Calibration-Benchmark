@@ -1,0 +1,30 @@
+{
+ "system": "nyiso",
+ "era": "2025",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "n_train": 82585,
+ "c7_fallbacks": 0,
+ "seconds": 634,
+ "log": [
+  "final fit 71s; winters=[2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]",
+  "cross-fit done 574s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.1780",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.0680",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0279",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0035",
+  "C4 sigma0=326.1 MW; gammas={0.2: (0.05, 0.0), 0.1: (0.02, 0.0), 0.05: (0.0, 0.02), 0.02: (0.2, 0.0)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 1.0, 0.05: 2.0, 0.02: 1.0}"
+ ]
+}

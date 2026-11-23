@@ -1,0 +1,23 @@
+{
+ "system": "miso",
+ "era": "2018",
+ "learner": "L1",
+ "weather": "era5",
+ "winters": [
+  2016,
+  2017
+ ],
+ "n_train": 21216,
+ "c7_fallbacks": 0,
+ "seconds": 73,
+ "log": [
+  "final fit 27s; winters=[2016, 2017]",
+  "cross-fit done 62s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.2500",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.1644",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0949",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0394",
+  "C4 sigma0=1463.1 MW; gammas={0.2: (0.4, 0.4), 0.1: (0.4, 0.4), 0.05: (0.4, 0.4), 0.02: (0.4, 0.4)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 1.0, 0.05: 1.0, 0.02: 1.0}"
+ ]
+}

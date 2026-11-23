@@ -1,0 +1,30 @@
+{
+ "system": "ercot",
+ "era": "2025",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024
+ ],
+ "n_train": 82584,
+ "c7_fallbacks": 0,
+ "seconds": 628,
+ "log": [
+  "final fit 71s; winters=[2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024]",
+  "cross-fit done 571s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.1080",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.0364",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0187",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0081",
+  "C4 sigma0=1601.3 MW; gammas={0.2: (0.0, 0.0), 0.1: (0.02, 0.0), 0.05: (0.2, 0.0), 0.02: (0.4, 0.1)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 2.0, 0.05: 1.0, 0.02: 1.0}"
+ ]
+}

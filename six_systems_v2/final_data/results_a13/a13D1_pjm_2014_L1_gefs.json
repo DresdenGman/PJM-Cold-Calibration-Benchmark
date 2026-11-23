@@ -1,0 +1,20 @@
+{
+ "system": "pjm",
+ "era": "2014",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [],
+ "n_train": 34320,
+ "c7_fallbacks": 0,
+ "seconds": 59,
+ "log": [
+  "final fit 41s; winters=[]",
+  "cross-fit done 41s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.1950",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.1398",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0798",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0350",
+  "C4 sigma0=2779.6 MW; gammas={0.2: (0.0, 0.4), 0.1: (0.0, 0.4), 0.05: (0.02, 0.4), 0.02: (0.05, 0.4)}",
+  "C6 bandwidths={0.2: 4.0, 0.1: 8.0, 0.05: 8.0, 0.02: 2.0}"
+ ]
+}

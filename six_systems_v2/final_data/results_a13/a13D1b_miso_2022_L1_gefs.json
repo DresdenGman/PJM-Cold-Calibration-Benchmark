@@ -1,0 +1,20 @@
+{
+ "system": "miso",
+ "era": "2022",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [],
+ "n_train": 65040,
+ "c7_fallbacks": 0,
+ "seconds": 92,
+ "log": [
+  "final fit 87s; winters=[]",
+  "cross-fit done 87s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.2080",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.1200",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0720",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0357",
+  "C4 sigma0=1551.0 MW; gammas={0.2: (0.4, 0.0), 0.1: (0.4, 0.0), 0.05: (0.4, 0.0), 0.02: (0.4, 0.0)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 2.0, 0.05: 2.0, 0.02: 4.0}"
+ ]
+}

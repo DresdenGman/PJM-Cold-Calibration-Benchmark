@@ -1,0 +1,23 @@
+{
+ "system": "miso",
+ "era": "2024",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [
+  2022,
+  2023
+ ],
+ "n_train": 16776,
+ "c7_fallbacks": 0,
+ "seconds": 89,
+ "log": [
+  "final fit 31s; winters=[2022, 2023]",
+  "cross-fit done 81s",
+  "ACI alpha=0.2: applied updates=2144, final alpha_t=0.2316",
+  "ACI alpha=0.1: applied updates=2144, final alpha_t=0.1188",
+  "ACI alpha=0.05: applied updates=2144, final alpha_t=0.0744",
+  "ACI alpha=0.02: applied updates=2144, final alpha_t=0.0307",
+  "C4 sigma0=1736.5 MW; gammas={0.2: (0.2, 0.2), 0.1: (0.4, 0.0), 0.05: (0.4, 0.1), 0.02: (0.4, 0.4)}",
+  "C6 bandwidths={0.2: 4.0, 0.1: 1.0, 0.05: 1.0, 0.02: 2.0}"
+ ]
+}

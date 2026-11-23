@@ -1,0 +1,25 @@
+{
+ "system": "pjm",
+ "era": "2014",
+ "learner": "L1",
+ "weather": "era5",
+ "winters": [
+  2010,
+  2011,
+  2012,
+  2013
+ ],
+ "n_train": 34320,
+ "c7_fallbacks": 0,
+ "seconds": 166,
+ "log": [
+  "final fit 36s; winters=[2010, 2011, 2012, 2013]",
+  "cross-fit done 146s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.2500",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.1360",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0769",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0350",
+  "C4 sigma0=3318.7 MW; gammas={0.2: (0.2, 0.4), 0.1: (0.2, 0.4), 0.05: (0.2, 0.4), 0.02: (0.4, 0.1)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 1.0, 0.05: 4.0, 0.02: 4.0}"
+ ]
+}

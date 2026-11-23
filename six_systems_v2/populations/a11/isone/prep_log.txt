@@ -1,0 +1,9 @@
+[2018] thr=-7.127 C; spells=2; coldest eval hour 2018-01-07 05:00:00 (-19.59 C) -> event 2018-01-05 00:00..2018-01-09 00:00 (71 h spell; flagged shed hours in window: 0); placebos=3
+[2019] thr=-8.627 C; spells=2; coldest eval hour 2019-01-31 07:00:00 (-16.97 C) -> event 2019-01-30 00:00..2019-02-02 00:00 (40 h spell; flagged shed hours in window: 0); placebos=3
+[2020] thr=-8.713 C; spells=0; coldest eval hour 2020-02-15 06:00:00 (-15.02 C) -> no named event
+[2021] thr=-8.433 C; spells=0; coldest eval hour 2021-01-31 06:00:00 (-13.97 C) -> no named event
+[2022] thr=-8.227 C; spells=2; coldest eval hour 2022-01-16 06:00:00 (-16.24 C) -> event 2022-01-14 00:00..2022-01-17 00:00 (37 h spell; flagged shed hours in window: 0); placebos=3
+[2023] thr=-8.447 C; spells=1; coldest eval hour 2023-02-04 04:00:00 (-23.60 C) -> event 2023-02-03 00:00..2023-02-06 00:00 (40 h spell; flagged shed hours in window: 0); placebos=3
+[2024] thr=-8.260 C; spells=0; coldest eval hour 2024-01-20 07:00:00 (-11.03 C) -> no named event
+[2025] thr=-8.007 C; spells=1; coldest eval hour 2025-01-22 07:00:00 (-15.89 C) -> no named event
+[2026] thr=-8.087 C; spells=3; coldest eval hour 2026-01-24 08:00:00 (-16.73 C) -> event 2026-01-23 00:00..2026-01-26 00:00 (48 h spell; flagged shed hours in window: 0); placebos=3
