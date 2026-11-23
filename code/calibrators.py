@@ -320,3 +320,57 @@ def c4_sigma0_for(bundle, grid):
     med = bundle["P"][:, C.qidx(grid, 0.5)]
     return max(C.SIGMA0_FLOOR_MW,
                float(np.median(np.abs(bundle["y"] - med))))
+
+
+# ---------------------------------------------------------------- LOEO, v13 correction
+# v12 normalised each pooled event's CQR scores by the median CQR score of that event's own hours,
+# floored at 1 MW. The CQR score is negative for covered hours, so the median is negative (and the
+# scale collapses to the 1 MW floor) whenever more than half the set is covered; this removed the
+# large errors of the worst events from the pool. v13 uses a positive scale defined on the D_cal of
+# each pooled event's era: the median absolute error of the median forecast (as in C4's sigma0).
+def era_scale_abs(cal_bundle, grid):
+    i50 = C.qidx(grid, 0.5)
+    return max(float(np.median(np.abs(cal_bundle["y"] - cal_bundle["P"][:, i50]))), C.SIGMA0_FLOOR_MW)
+
+
+def bounds_C1_loeo_v13(pools, pool_scales, st, P_new, alpha, grid):
+    norm = [cqr_scores(b["y"], b["P"], alpha, b["grid"]) / sc for b, sc in zip(pools, pool_scales)]
+    q = C.expansion_only(C.order_statistic_Q(np.concatenate(norm), alpha) * st)
+    lo, hi = _cols(P_new, alpha, grid)
+    return lo - q, hi + q
+
+
+def bounds_C2_loeo_v13(pools, pool_scales, st, P_new, temp_new, alpha, grid, track):
+    alln = np.concatenate([cqr_scores(b["y"], b["P"], alpha, b["grid"]) / sc for b, sc in zip(pools, pool_scales)])
+    allb = np.concatenate([_bin_idx(b["temp"]) for b in pools])
+    qg = C.order_statistic_Q(alln, alpha) * st
+    Q = np.full(len(C.TEMP_BIN_EDGES) - 1, qg)
+    for k in range(len(Q)):
+        sk = alln[allb == k]; nk = len(sk)
+        if track == "C2a":
+            qk = C.order_statistic_Q(sk, alpha) * st if nk else np.inf
+            Q[k] = C.expansion_only(max(qk, qg))
+        else:
+            if nk == 0:
+                Q[k] = C.expansion_only(qg)
+            else:
+                qk = C.order_statistic_Q(sk, alpha) * st
+                Q[k] = np.inf if np.isinf(qk) else C.expansion_only((nk * qk + C.MONDRIAN_SHRINK_M * qg) / (nk + C.MONDRIAN_SHRINK_M))
+    lo, hi = _cols(P_new, alpha, grid)
+    q = Q[_bin_idx(temp_new)]
+    return lo - q, hi + q
+
+
+def bounds_C4_loeo_v13(pools, pool_scales, st, target_tune, P_new, hdh_new, alpha, grid):
+    pooled_tune = dict(y=np.concatenate([b["y"] for b in pools]), P=np.concatenate([b["P"] for b in pools]),
+                       hdh=np.concatenate([b["hdh"] for b in pools]), grid=grid)
+    gammas = c4_select_gammas(pooled_tune, c4_sigma0(pooled_tune))
+    g_hi, g_lo = gammas[(alpha, "hi")], gammas[(alpha, "lo")]
+    sh, sl = [], []
+    for b, sc in zip(pools, pool_scales):
+        lo_c, hi_c = _cols(b["P"], alpha, b["grid"])
+        sh.append((b["y"] - hi_c) / (sc * (1.0 + g_hi * b["hdh"]))); sl.append((lo_c - b["y"]) / (sc * (1.0 + g_lo * b["hdh"])))
+    q_hi = C.expansion_only(C.order_statistic_Q(np.concatenate(sh), alpha / 2.0))
+    q_lo = C.expansion_only(C.order_statistic_Q(np.concatenate(sl), alpha / 2.0))
+    lo_n, hi_n = _cols(P_new, alpha, grid)
+    return lo_n - q_lo * st * (1.0 + g_lo * hdh_new), hi_n + q_hi * st * (1.0 + g_hi * hdh_new)

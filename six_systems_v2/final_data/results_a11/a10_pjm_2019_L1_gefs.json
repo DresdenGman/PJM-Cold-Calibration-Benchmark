@@ -1,0 +1,23 @@
+{
+ "system": "pjm",
+ "era": "2019",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [
+  2016,
+  2017,
+  2018
+ ],
+ "n_train": 29977,
+ "c7_fallbacks": 0,
+ "seconds": 11,
+ "log": [
+  "predictions reused",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.1620",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.0780",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0574",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0248",
+  "C4 sigma0=2453.8 MW; gammas={0.2: (0.4, 0.4), 0.1: (0.4, 0.4), 0.05: (0.4, 0.4), 0.02: (0.1, 0.0)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 1.0, 0.05: 1.0, 0.02: 2.0}"
+ ]
+}

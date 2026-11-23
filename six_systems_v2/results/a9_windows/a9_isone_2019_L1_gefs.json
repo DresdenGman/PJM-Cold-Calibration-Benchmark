@@ -1,0 +1,24 @@
+{
+ "system": "isone",
+ "era": "2019",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [
+  2016,
+  2017,
+  2018
+ ],
+ "n_train": 29977,
+ "c7_fallbacks": 0,
+ "seconds": 148,
+ "log": [
+  "final fit 42s; winters=[2016, 2017, 2018]",
+  "cross-fit done 137s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.1860",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.0740",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0360",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0088",
+  "C4 sigma0=348.2 MW; gammas={0.2: (0.0, 0.02), 0.1: (0.0, 0.1), 0.05: (0.0, 0.05), 0.02: (0.0, 0.1)}",
+  "C6 bandwidths={0.2: 8.0, 0.1: 4.0, 0.05: 1.0, 0.02: 4.0}"
+ ]
+}

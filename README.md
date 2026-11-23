@@ -1,3 +1,62 @@
+# Calibrated for the Winter, Not for the Cold Snap
+
+**Code, plans, derived data and results for: "Calibrated for the Winter, Not for the Cold Snap: Chronological Evidence from 38 Extreme-Cold Events in Six U.S. Power Systems" (version 2.0.0).**
+
+The study asks whether conformal 90% prediction intervals for day-ahead electricity load that are
+calibrated on earlier winters remain calibrated in the next extreme-cold event, using only
+information available at issuance (archived day-ahead GEFS weather, chronological training and
+leave-one-winter-out cross-fitted calibration). It covers 38 weather-defined events in PJM, MISO,
+ERCOT, SPP, NYISO and ISO-NE (2014-2026) and two base forecasts: a gradient-boosting quantile
+forecaster (L1) and the operators' own EIA-930 day-ahead demand forecasts.
+
+## Main results (version 2.0.0)
+
+- Across 38 events, C1 (conformalized quantile regression) intervals cover 0.64 of event hours
+  against 0.84 of winter hours: a gap of 20.3 percentage points (CR1 95% interval 10.0-30.5 over
+  15 cold-outbreak clusters). The 13 events of the pre-specified primary design alone are
+  inconclusive (12.9 pp, -5.0 to 30.8); the pooled analysis was not pre-specified.
+- Intervals around the operators' day-ahead forecasts (36 events) show a gap of 18.2 pp
+  (12.8-23.6), although those forecasts are more accurate than L1.
+- About 92% of event misses lie above the interval. The out-of-event-selected recalibration
+  repairs 3 of 23 large-gap events; calibrating on earlier cold events restores coverage only by
+  widening intervals about 1.9-fold.
+
+All numbers in the manuscript are produced by `six_systems_v2/code/make_numbers.py` and
+`make_tables.py` from the files in `six_systems_v2/final_data/`.
+
+**Versions 1.0-1.2 are superseded.** Their headline claims (for example, that no calibrator repairs
+any event, and that the direction of the leave-one-event-out bias depends on the system) came from
+an earlier design and from a normaliser error and a mis-coded frontier condition that were later
+corrected. They are kept below and in the earlier releases for the record only.
+
+## Layout of version 2.0.0 (`six_systems_v2/`)
+
+| Folder | Content |
+|---|---|
+| `code/` | Analysis scripts: data frames, model fitting per era (`run_cell_a9.py`, `a9_job.py`), operator-forecast runs (`run_a12.py`, `run_a14.py`), summaries and inference (`analyze_*.py`, `rev_*.py`), break rule (`spp_break_rule.py`), and the generators of the manuscript's numbers, tables and figures (`make_numbers.py`, `make_tables.py`, `make_figs.py`). Core forecasters and calibrators are in `code/` at the repository root. |
+| `plans/` | Plans A12, A13 (and addendum) and A14 with their SHA-256 fingerprints. Plans A9-A11 are in `redesign_a9/`, `rapid_onset_a10/` and `more_grids_a11/`, published as pull requests before their analyses. |
+| `results/` | Per-era result matrices (`a9_windows/`, fitted on Windows; `a9_mac/`, fitted on macOS), revision analyses (`analysis/`), operator-forecast results (`a12/`, `a14/`). |
+| `final_data/` | The result files read by the manuscript generators. |
+| `populations/` | Event, cold-spell and placebo windows for the four further systems (written before any model was fitted). |
+| `weather/` | Extracted footprint-mean GEFS control forecasts (00 UTC, day-ahead) and ERA5 footprint series. |
+| `paper_outputs/` | `numbers.tex`, generated table rows and figures. |
+
+## Data not redistributed
+
+Raw EIA-930 files can be downloaded from the U.S. Energy Information Administration (see
+`DATA_SOURCES.md`). The 2010-2014 PJM metered load table used for the 2014 era is not
+redistributed; `build_frames_a9.py` documents how it enters.
+
+## Pre-specification
+
+Which analyses were planned, when, and which are exploratory is documented in the manuscript
+(Section 4.6) and its Supplementary Section S18. GitHub pull-request merge times are the external
+timestamps for plans A5-A11; later plans have local fingerprints only.
+
+---
+
+# Earlier versions (1.0-1.2, superseded)
+
 # PJM and MISO Cold-Spell Calibration Benchmark
 
 **When Cold-Spell Calibration Fails to Transfer: A PJM and MISO Benchmark of Probabilistic Load Forecasting in Extreme Cold**
@@ -116,4 +175,4 @@ PJM data: PJM's published data terms).
 ## Contact
 
 Dresden Goehner, Independent Researcher, Jurupa Valley, CA, USA —
-dresdengoehner@outlook.com
+dr.dresden0416@gmail.com

@@ -1,0 +1,24 @@
+{
+ "system": "pjm",
+ "era": "2014",
+ "learner": "L1",
+ "weather": "gefs",
+ "winters": [
+  2010,
+  2011,
+  2012,
+  2013
+ ],
+ "n_train": 34320,
+ "c7_fallbacks": 0,
+ "seconds": 7,
+ "log": [
+  "predictions reused",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.2700",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.1460",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0810",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0355",
+  "C4 sigma0=3400.6 MW; gammas={0.2: (0.4, 0.4), 0.1: (0.4, 0.4), 0.05: (0.4, 0.2), 0.02: (0.4, 0.4)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 4.0, 0.05: 4.0, 0.02: 4.0}"
+ ]
+}

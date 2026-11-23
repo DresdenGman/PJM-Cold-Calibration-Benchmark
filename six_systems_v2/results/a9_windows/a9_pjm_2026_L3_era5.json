@@ -1,0 +1,31 @@
+{
+ "system": "pjm",
+ "era": "2026",
+ "learner": "L3",
+ "weather": "era5",
+ "winters": [
+  2016,
+  2017,
+  2018,
+  2019,
+  2020,
+  2021,
+  2022,
+  2023,
+  2024,
+  2025
+ ],
+ "n_train": 91345,
+ "c7_fallbacks": 0,
+ "seconds": 37,
+ "log": [
+  "final fit 1s; winters=[2016, 2017, 2018, 2019, 2020, 2021, 2022, 2023, 2024, 2025]",
+  "cross-fit done 3s",
+  "ACI alpha=0.2: applied updates=2120, final alpha_t=0.1960",
+  "ACI alpha=0.1: applied updates=2120, final alpha_t=0.1000",
+  "ACI alpha=0.05: applied updates=2120, final alpha_t=0.0522",
+  "ACI alpha=0.02: applied updates=2120, final alpha_t=0.0230",
+  "C4 sigma0=3977.7 MW; gammas={0.2: (0.4, 0.0), 0.1: (0.2, 0.0), 0.05: (0.4, 0.0), 0.02: (0.2, 0.0)}",
+  "C6 bandwidths={0.2: 1.0, 0.1: 1.0, 0.05: 1.0, 0.02: 1.0}"
+ ]
+}
