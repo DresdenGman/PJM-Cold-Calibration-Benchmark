@@ -139,7 +139,7 @@ class L3Model:
             A = XtX + lam * (P.T @ P) + 1e-8 * np.eye(X.shape[1])
             Ainv = np.linalg.pinv(A)
             beta = Ainv @ Xty
-            trH = float(np.trace(X @ Ainv @ X.T))
+            trH = float(np.trace(Ainv @ XtX))   # = trace(X Ainv X^T); avoids an n x n matrix (A9)
             rss = float(np.sum((y - X @ beta) ** 2))
             gcv = rss / (len(y) * (1.0 - trH / len(y)) ** 2)
             if best is None or gcv < best[0]:
